@@ -46,6 +46,7 @@ jobs:
         run: |
           cd $GOPATH/src/github.com/$GITHUB_REPOSITORY
           go test -v ./... -covermode=count -coverprofile=coverage.out
+          cp ./coverage.out $HOME/coverage.out
 
       - name: Convert coverage to lcov
         uses: jandelgado/gcov2lcov-action@v1.0.0
