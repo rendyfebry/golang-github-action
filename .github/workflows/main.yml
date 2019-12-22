@@ -45,6 +45,9 @@ jobs:
       - name: Run Unit Test
         run: |
           cd $GOPATH/src/github.com/$GITHUB_REPOSITORY
+
+          export PATH=$PATH:$GOBIN
+
           go test -v ./... -covermode=count -coverprofile=coverage.out
           cp ./coverage.out $HOME/coverage.out
           cp ./coverage.out $GOPATH/coverage.out
