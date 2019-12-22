@@ -1,6 +1,6 @@
 name: main-action
 
-on: [pull_request]
+on: [push, pull_request]
 
 jobs:
   automated-test:
